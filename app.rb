@@ -8,8 +8,9 @@ get("/") do
   erb(:index)
 end
 
-post("/todo") do
+post("/confirmation") do
   @description = params.fetch('description')
-  Task.new(@description)
+  task = Task.new(@description)
+  task.save()
   erb(:confirmation)
 end
