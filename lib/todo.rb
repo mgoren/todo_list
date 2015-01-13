@@ -6,6 +6,10 @@ class Task
     @@descriptions.push(description)
   end
 
+  define_singleton_method(:clear) do
+    @@descriptions = []
+  end
+
   define_singleton_method(:all) do
     @@descriptions
   end
