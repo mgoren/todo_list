@@ -1,7 +1,7 @@
 require('rspec')
 require('todo')
 
-describe(Todo) do
+describe(Task) do
 
   describe('#description') do
 
