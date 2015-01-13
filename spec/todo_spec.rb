@@ -26,11 +26,14 @@ end
       expect(Task.all()).to(eq([]))
     end
 
-    it("lists descriptions for all tasks") do
+    it("saves tasks") do
       task1 = Task.new("write a program")
       task2 = Task.new("drink coffee")
       task3 = Task.new("eat food")
-      expect(Task.all()).to(eq(["write a program","drink coffee","eat food"]))
+      task1.save()
+      task2.save()
+      task3.save()
+      expect(Task.all()).to(eq([task1, task2, task3]))
     end
 
   end
