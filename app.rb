@@ -10,7 +10,14 @@ end
 
 post("/confirmation") do
   @description = params.fetch('description')
-  task = Task.new(@description)
-  task.save()
+  if @description != ""
+    task = Task.new(@description)
+    task.save()
+  end
   erb(:confirmation)
+end
+
+get("/reset") do
+  Task.clear()
+  erb(:reset)
 end

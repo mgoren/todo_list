@@ -1,3 +1,7 @@
-<h2>Description submitted:</h2>
-<p><%= @description %></p>
-<a href="/" type="button" class="btn btn-default">Add Another</a>
+<% if @description == "" %>
+  <h2>No task added.</h2>
+<% else %>
+  <h2>Description submitted:</h2>
+  <p><%= @description %></p>
+<% end %>
+<a href="/" type="button" class="button-go">Add Another</a>
